@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Portfolio Landing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap"rel="stylesheet'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+    .internship {
+        width: 48%;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        padding: 20px;
+        margin: 20px auto;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .internship:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .internship:hover .popup {
+        display: block;
+    }
+    
+    .internship h2 {
+        margin-top: 0;
+        color: #974343;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 1px;
+        margin-left: 0px;
+    }
+    
+    .internship img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .internship p {
+        color: #666;
+        margin-bottom: 10px;
+    }
+    
+    .internship-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .blue-button {
+        background-color: #0a58ac;
+        /* Blue color */
+        color: white;
+        /* White text color */
+        border: none;
+        /* Remove button border */
+        padding: 10px 20px;
+        /* Add some padding */
+        text-align: center;
+        /* Center the text */
+        text-decoration: none;
+        /* Remove underline */
+        display: inline-block;
+        /* Display as an inline element */
+        font-size: 16px;
+        /* Set the font size */
+        border-radius: 4px;
+        /* Add some rounded corners */
+        cursor: pointer;
+        font-family: sans-serif;
+        /* Change the cursor to a pointer on hover */
+        letter-spacing: 1.5px;
+        font-style: italic;
+    }
+    
+    .blue-button:hover {
+        background-color: #0b4889;
+        /* Darker blue on hover */
+    }
+    
+    .services {
+        color: #fff;
+        background: #405885;
+    }
+    /*  Navbar  */
+    
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        padding: 30px 0;
+        font-family: "Ubuntu", sans-serif;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar.sticky {
+        padding: 15px 0;
+        background: #b0c5e5;
+    }
+    
+    .navbar .max-width {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .navbar .logo a {
+        color: #0d0909;
+        font-size: 35px;
+        font-weight: 600;
+    }
+</style>
+
+
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <!-- Header -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#"><span>Gauri Gupta</span><span></span></a></div>
+            <ul class="menu">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="max-width" style="margin-top: 30px;">
+            <h2 class="title">My Internships</h2>
+            <div class="serv-content">
+
+
+                <script>
+                    function openForm(formId) {
+                        document.getElementById(formId).style.display = "block";
+                        document.body.style.overflow = "hidden"; // Disable scrolling
+                    }
+
+                    function closeForm(formId) {
+                        document.getElementById(formId).style.display = "none";
+                        document.body.style.overflow = "auto"; // Enable scrolling
+                    }
+                </script>
+
+
+
+            </div>
+
+            <div class="internship-container">
+                <div class="internship" onclick="openForm('form1')">
+                    <img src="https://www.streebo.com/wp-content/themes/streebo/images/AI-Powered-Chatbot-for-Government-Generic-Customer/AI-Powered-Chatbot-for-Government-Generic-Customer-img2.jpg" alt="Internship 2">
+                    <h2>Research Intern</h2>
+                    <p style="font-weight: bold;">Company Name: Centre for Development of Advanced Computing.</p>
+                    <p style="font-style: oblique; font-weight:600;">Duration: Jan 2023 - Jan 2024</p>
+                    <p style="font-style:italic;">Description: Developed a Generic ChatBot using Knowledge Graph and Graphs.</p>
+                    <button class="blue-button">Click for more details</button>
+                </div>
+
+
+
+                <div class="internship" onclick="openForm('form2')">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQFTZptlv724_Q/article-cover_image-shrink_720_1280/0/1686330890097?e=2147483647&v=beta&t=rxjmWx_rD5trsxw3y5B0fQsbbkyFu8yqaghrIzssOvY" alt="Internship 1">
+                    <h2>Software Developer Intern</h2>
+                    <p style="font-weight: bold;">Company Name: Baker Hughes.</p>
+                    <p style="font-style: oblique; font-weight:600;">Duration: Jan 2024 - Present</p>
+                    <p style="font-style:italic;">Description: Currently part of a team working on knowledge graph and software development.</p>
+                    <button class="blue-button">Click for more details</button>
+                </div>
+
+            </div>
+
+            <div class="internship-container">
+                <div class="internship" onclick="openForm('form3')">
+                    <img src="https://d3i71xaburhd42.cloudfront.net/ca2427278c2dd4368925d72165d5df8615c3ab33/2-Figure1-1.png" alt="Internship 3">
+                    <h2>Machine Learning Intern</h2>
+                    <p style="font-weight: bold;">Company Name: RedX, MIT Academy of Engineering.</p>
+                    <p style="font-style: oblique; font-weight:600;">Duration: June 2023 - Dec 2023</p>
+                    <p style="font-style:italic;">Description: Worked on a BERT Model to create a Text Summarizer.</p>
+                    <button class="blue-button">Click for more details</button>
+                </div>
+
+                <div class="internship" onclick="openForm('form5')">
+                    <img src="https://miro.medium.com/v2/resize:fit:549/1*GfCJ_Py9Xqk-0b06mVVvkQ.jpeg" alt="Internship 5">
+                    <h2>Software Developer Intern</h2>
+                    <p style="font-weight: bold;">Company Name: Steep Graph</p>
+                    <p style="font-style: oblique; font-weight:600;">Duration: Oct 2023 - Jan 2024</p>
+                    <p style="font-style:italic;">Description: Worked on 3DX Platform and on Project Life Management
+                    </p>
+                    <button class="blue-button">Click for more details</button>
+                </div>
+            </div>
+
+            <div class="internship-container">
+
+                <div class="internship" onclick="openForm('form4')">
+                    <img src="https://3cloudsolutions.com/wp-content/uploads/2022/11/power-bi-custom-visuals.jpg" alt="Internship 4">
+                    <h2>Research Intern</h2>
+                    <p style="font-weight: bold;">Company Name: E Samyak Software.</p>
+                    <p style="font-style: oblique; font-weight:600;">Duration: May 2022 - Aug 2022</p>
+                    <p style="font-style:italic;">Description: Developed a Visualization Using Power Bi on company database</p>
+                    <button class="blue-button">Click for more details</button>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="form-container" id="form1">
+            <div class="form-content">
+                <span class="close" onclick="closeForm('form1')">&times;</span>
+                <h2 style="color: #333;">Research Intern</h2>
+                <p style="color: #6c5151; font-weight: bold; font-size: 17px;">Company Name: Centre for Development of Advanced Computing.</p>
+
+                <p style="color: #333; font-style: oblique; font-weight:600;">Duration: Jan 2023 - Jan 2024</p>
+                <p style="color: #333; font-weight:500;"><br>Description: The project involves developing a generic chatbot using Knowledge Graph and Graphs. Knowledge Graph is a powerful technology that can help chatbots understand the context and intent of user queries. It is a network of
+                    entities and their relationships, which can be used to provide more accurate and relevant responses to user queries. In this project, the chatbot is designed to use Knowledge Graph to understand the user's queries and provide relevant
+                    responses. The Knowledge Graph is created using graphs, which are visual representations of data and their relationships. The graphs are used to represent the entities and their relationships in a way that is easy to understand and
+                    analyze. The chatbot is designed to be generic, meaning that it can be used for a variety of applications. It can be customized to fit the needs of different industries and use cases. For example, it can be used in customer service,
+                    e-commerce, healthcare, and many other areas.</p>
+                <br>
+                <div class="image-container">
+                    <img src="https://www.streebo.com/wp-content/themes/streebo/images/AI-Powered-Chatbot-for-Government-Generic-Customer/AI-Powered-Chatbot-for-Government-Generic-Customer-img3.jpg" alt="Image 1">
+                    <img src="https://www.citiustech.com/hs-fs/hubfs/assets/images/blog/Chatbots-in-Healthcare.png?width=1430&name=Chatbots-in-Healthcare.png" alt="Image 2">
+                    <img src="https://assets-global.website-files.com/5e960a73ae45f24b7959e93e/5ffb3fc5986fc5a29c15c4b3_wellness-resoruce-konverse-ai.svg" alt="Image 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container" id="form2">
+            <div class="form-content">
+                <span class="close" onclick="closeForm('form2')">&times;</span>
+                <h2 style="color: #333;">Research Intern</h2>
+                <p style="color: #6c5151; font-weight: bold; font-size: 17px;">Company Name: Baker Hughes.</p>
+
+                <p style="color: #333; font-style: oblique; font-weight:600;">Duration: Jan 2024 - Present</p>
+                <p style="color: #333; font-weight:500;"><br>Description: As a member of a team focused on knowledge graph and software development, my primary responsibility is to design and implement software solutions that enable the creation, management, and utilization of knowledge graphs.
+                    A knowledge graph is a powerful tool for data integration, querying, and analysis. It is a network of entities and their interrelationships, represented as nodes and edges in a graph structure. By organizing data in a graph format,
+                    we can gain insights and make connections that would be difficult or impossible to achieve with traditional relational databases. In our team, we work on various aspects of knowledge graph development, including data modeling, data
+                    ingestion, data integration, querying, and visualization. We use a range of technologies, including graph databases, natural language processing tools, and machine learning algorithms, to build scalable and performant knowledge graph
+                    solutions.
+                </p>
+
+                <div class="image-container">
+                    <img src="https://research-assets.cbinsights.com/2021/01/08173926/RocCovid_1_8_21.jpg" style="height: 170px;" alt="Image 1">
+                    <img src="https://miro.medium.com/v2/resize:fit:1136/1*e8xtqXuqNCBWhzdbF7krtA.png" alt="Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGLde3769LPeAR-_c_Sr_CSDLL9lTE0JRW_lG46U2lng&s" style="height: 170px;" alt="Image 3">
+                </div>
+            </div>
+        </div>
+        <div class="form-container" id="form3">
+            <div class="form-content">
+                <span class="close" onclick="closeForm('form3')">&times;</span>
+                <h2 style="color: #333;">Research Intern</h2>
+                <p style="color: #6c5151; font-weight: bold; font-size: 17px;">Company Name: RedX, MIT Academy of Engineering..</p>
+
+                <p style="color: #333; font-style: oblique; font-weight:600;">Duration: June 2023 - Dec 2023</p>
+                <p style="color: #333; font-weight:500;"><br>Description: Working on a BERT (Bidirectional Encoder Representations from Transformers) model to create a text summarizer involves leveraging state-of-the-art natural language processing techniques to develop a system that can generate
+                    concise and informative summaries of input text. BERT is a transformer-based model that excels in capturing contextual information from text, making it well-suited for tasks like text summarization. By fine-tuning a pre-trained BERT
+                    model on a summarization dataset, we can teach the model to understand the salient points of a document and generate a coherent summary.</p>
+
+                <div class="image-container" style="margin-top: 20px;">
+                    <br>
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231108160230/BART-encoder-decoder-network-architecture-.png" alt="Image 1">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*hk8ZeVbmxy7EzyTVvP_NvA.png" alt="Image 2">
+                    <img src="https://www.mdpi.com/information/information-13-00067/article_deploy/html/images/information-13-00067-g001.png" style="height: 170px;" alt="Image 3">
+                </div>
+            </div>
+        </div>
+        <div class="form-container" id="form4">
+            <div class="form-content">
+                <span class="close" onclick="closeForm('form4')">&times;</span>
+                <h2 style="color: #333;">Research Intern</h2>
+                <p style="color: #6c5151; font-weight: bold; font-size: 17px;">Company Name: E Samyak Software.</p>
+
+                <p style="color: #333; font-style: oblique; font-weight:600;">Duration: May 2022 - Aug 2022</p>
+                <p style="color: #333; font-weight:500;"><br>Description: The process of creating a visualization using Power BI on a company database involves several steps, including data integration, data transformation, report creation, and dashboard implementation 1 . The first step is
+                    to extract data from the company database using Power BI connectors, which enable the integration of data from various sources, including Excel files, online servers, and web services or APIs 1 2 . The data is then transformed and
+                    cleaned using Power BI's data transformation capabilities, which provide a comprehensive set of tools for data pre-processing, including cleaning, merging or splitting columns, eliminating duplicates, and creating calculated columns
+                    and measures</p>
+
+                <div class="image-container" style="margin-top: 25px;">
+                    <img src="https://blog.bismart.com/hs-fs/hubfs/Imported_Blog_Media/data%20visualization%20with%20power%20bi-Sep-26-2023-09-10-49-2729-AM.jpg?width=1930&height=1200&name=data%20visualization%20with%20power%20bi-Sep-26-2023-09-10-49-2729-AM.jpg" alt="Image 1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBZ4h2H68DREPABKs6gt8Ujpac7HmPt-0WcsqJoyCOCg&s" alt="Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Lk3AEzmiy7MFS9t_Aixv-6_sRNDHKAlpr_1emi4D6Q&s" alt="Image 3">
+                </div>
+            </div>
+        </div>
+        <div class="form-container" id="form5">
+            <div class="form-content">
+                <span class="close" onclick="closeForm('form5')">&times;</span>
+                <h2 style="color: #333;">Research Intern</h2>
+                <p style="color: #6c5151; font-weight: bold; font-size: 17px;">Company Name: Steep Graph</p>
+
+                <p style="color: #333; font-style: oblique; font-weight:600;">Duration: Oct 2023 - Jan 2024</p>
+                <p style="color: #333; font-weight:500;"><br>Description: The 3DX Platform is a comprehensive digital platform that integrates various tools and solutions for product design, engineering, simulation, manufacturing, and project management. Developed by Dassault Systèmes, it provides
+                    a collaborative environment where teams can work together, share data, and manage projects efficiently. The platform includes features such as Product Lifecycle Management (PLM), collaboration tools, simulation and modeling, and data
+                    management. By using the 3DX Platform, organizations can streamline their product development processes, improve collaboration and communication among team members, and make data-driven decisions. The platform's centralized data management
+                    capabilities ensure that all stakeholders have access to accurate and up-to-date information, reducing errors and improving overall product quality</p>
+
+                <div class="image-container" style="margin-top: 25px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkk6ZnVT3swARY8ChZEBUGR7_SgWnKbUTePoydKLqdgQ&s" alt="Image 1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5dQDnsg5ynqyxnE2Egpjxcp6QF0WEyk_JZeKHc3jDUQ&s" alt="Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWtrNoSJPmATWQvtVQrtJTo6s3fDLxlaZkepGc_R0mw&s" alt="Image 3">
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Get in Touch</div>
+                    <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be a part of your visions. Email me with any questions or inquiries. I'll happy to answer your questions and set up
+                        a meeting with you.</p>
+                    <div class="icons">
+
+                        <div class="row">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJjzyqdOTrPw0j8AgVRWOYIDiDQK-TvpED_nHk_IJBuQ&s" style="width: 4%; ">
+
+                            <i class="fa-solid fa-user-large"></i>
+
+                            <div class="info" style="padding-left: -30px;">
+                                <div class="head">Name</div>
+                                <div class="sub-title"><a href="#" style="text-decoration: none; color: #333;"> Gauri gupta</a></div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <img src="https://cdn-icons-png.freepik.com/256/447/447031.png" style="width: 4%;">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="info">
+                                <div class="head"> Address</div>
+                                <div class="sub-title"> Mira Road, Mumbai, India</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Oppjh-rqdE8N8vSZkntd2ZqI-FsKsfGperQceLrbag&s" style="width: 3.5%;">
+
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title"><a href="mailto:#" style="text-decoration: none; color: #333;"> gaurisgupta12@gmail.com</a></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <i class="bi bi-translate"></i>
+                            <div class="info">
+                                <div class="head">Language Known</div>
+                                <div class="sub-title">Hindi, English</div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <!-- Social -->
+                        <div class="social-menu">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#" title="Get Educate with Us"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reach -->
+                <div class="column right">
+                    <div class="text">Message me</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="embedmap-canvas" style="margin-top: 50px;">
+                <iframe src="https://www.google.com/maps/embed/v1/place?q=Mumbai,+Maharashtra,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" style="border:0; height: 500px; width: 100%;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <span>
+          <a href="#">Gauri Gupta</a> | <span class="far fa-copyright"></span> 2024 All Rights Reserved
+        </span>
+    </footer>
+    <script src='https://kit.fontawesome.com/3b57a2a2a7.js'></script>
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

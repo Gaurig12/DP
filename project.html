@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Portfolio Landing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap"rel="stylesheet'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<style>
+    .projects {
+        background-color: rgba(62, 141, 175, 0.881);
+        padding: 50px 0;
+        text-align: center;
+        /* Add this line to center align the projects */
+    }
+    /*  Menu Btn  */
+    
+    .menu-btn {
+        color: #fff;
+        font-size: 23px;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .navbar .menu li {
+        list-style: none;
+        display: inline-block;
+    }
+    
+    .navbar .menu li a {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 25px;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar .menu li a:hover {
+        color: #1e3551;
+    }
+    
+    .navbar.sticky .menu li a:hover {
+        color: #fff;
+    }
+    
+    .scroll-up-btn {
+        position: fixed;
+        height: 45px;
+        width: 42px;
+        background: #1e3551;
+        right: 30px;
+        bottom: 10px;
+        text-align: center;
+        line-height: 45px;
+        color: #fff;
+        z-index: 9999;
+        font-size: 30px;
+        border-radius: 6px;
+        border-bottom-width: 2px;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+    
+    .scroll-up-btn.show {
+        bottom: 30px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .scroll-up-btn:hover {
+        filter: brightness(90%);
+    }
+    
+    .carousel {
+        display: flex;
+        flex-wrap: wrap;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        justify-content: center;
+        /* Add this line to center align the cards within the carousel */
+    }
+    
+    .card {
+        flex: 0 0 auto;
+        width: 40%;
+        margin-right: 3%;
+        margin-bottom: 3%;
+        background-color: #f1efef;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 400px;
+        display: inline-block;
+        text-align: left;
+        /* Add this line to align text content to the left within the card */
+    }
+    
+    .max-width {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #2e2424;
+    }
+    
+    .projects .carousel .card img {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 20%;
+        border: 5px solid #c2dfe7;
+        transition: all 0.3s ease;
+        border-width: 2px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+    
+    .projects .carousel .card:hover img {
+        border-color: #0d0c0c;
+        transform: translateY(-4px);
+    }
+    
+    .box {
+        border: 1px solid #c9cef4;
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+        border-radius: 10%;
+    }
+    
+    .box img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .box:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    .box:hover:before {
+        opacity: 1;
+    }
+    
+    .project-title {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .box:hover .project-title {
+        transform: translateY(-10px);
+    }
+    
+    .project-subtitle {
+        color: #fff;
+        margin: 10px 0 0 0;
+        position: relative;
+        font-size: 1.1rem;
+        transition: transform 0.3s ease-in-out;
+        font-style: italic;
+    }
+    
+    .box:hover .project-subtitle {
+        transform: translateY(-10px);
+    }
+    
+    .project-description {
+        color: #fff;
+        margin: 10px 0 0 0;
+        position: relative;
+        font-size: 0.9rem;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .box:hover .project-description {
+        transform: translateY(-10px);
+    }
+    
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        font-weight: 600;
+        transition: all 300ms ease;
+        padding: 8px;
+        width: 7rem;
+        border-radius: 2rem;
+    }
+    
+    .btn-color-2 {
+        border: rgb(53, 53, 53) 0.1rem solid;
+    }
+    
+    .btn-color-2:hover {
+        cursor: pointer;
+    }
+    
+    .btn-color-2:hover {
+        background: rgb(76, 123, 177);
+        color: white;
+    }
+    
+    .btn-color-2 {
+        background-color: #cedaf9;
+    }
+    
+    .btn-color-2:hover {
+        border: rgb(255, 255, 255) 0.1rem solid;
+    }
+    
+    .btn-container {
+        gap: 1rem;
+    }
+    
+    .project-btn {
+        color: black;
+        border-color: rgb(83, 246, 249);
+    }
+    /*  Navbar  */
+    
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        padding: 30px 0;
+        font-family: "Ubuntu", sans-serif;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar.sticky {
+        padding: 15px 0;
+        background: #98b7e4;
+    }
+    
+    .navbar .max-width {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .navbar .logo a {
+        color: #0d0909;
+        font-size: 35px;
+        font-weight: 600;
+    }
+</style>
+
+
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <!-- Header -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#"><span>Gauri Gupta</span><span></span></a></div>
+            <ul class="menu">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="projects" id="projects">
+        <div class="max-width">
+            <h2 class="title">My Projects</h2>
+            <div class="carousel owl-carousel">
+                <div class="row">
+                    <div class="card" style="background-color: #e2eaf9; border-radius: 10%;">
+                        <div class="box" style="background-color: #ffffff;">
+                            <img src="https://www.resumego.net/wp-content/uploads/resumechecker4.png" alt="">
+                            <h3 class="project-title" style="color: #2e2424;">Resume Analyzer</h3>
+                            <p class="project-subtitle" style="color: #742424;">Machine Learning, Data Science and NLP, CSS + Bootstrap.</p>
+                            <p class="project-description" style="color: #794343;">This AI-powered system analyzes the resume against key criteria required as per the industry standards and commits an overall score to the resume and classifies it.</p>
+                        </div>
+                        <div class="project-btn-container">
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Github</a>
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: #e2eaf9; border-radius: 10%;">
+                        <div class="box" style="background-color: #ffffff;">
+                            <img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-13-3140-4_42/MediaObjects/476029_1_En_42_Fig1_HTML.png" alt="">
+                            <h3 class="project-title" style="color: #2e2424;">Diabetics Detection and Prediction</h3>
+                            <p class="project-subtitle" style="color: #742424;">Data Science and Machine Learning Algorithms, Python.</p>
+                            <p class="project-description" style="color: #794343;">Did a comparative Study of ML Algorithms and detected and predicted Type 2 diabetics by a binary classification.</p>
+                        </div>
+                        <div class="project-btn-container">
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Github</a>
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="card" style="background-color: #e2eaf9; border-radius: 10%;">
+                        <div class="box" style="background-color: #ffffff;">
+                            <img src="https://sls.eff.org/files/sls/wysiwyg/pictures/18/content_gao_fr.png" alt="">
+                            <h3 class="project-title" style="color: #2e2424;">Face Detection and Recognition</h3>
+                            <p class="project-subtitle" style="color: #742424;">Computer Vision, CNN and python, Machine learning</p>
+                            <p class="project-description" style="color: #794343;"> Facial recognition projects involve using computer vision and machine learning techniques to detect and recognize faces in images or videos. These projects typically involve face detection using algorithms.
+                            </p>
+                        </div>
+                        <div class="project-btn-container">
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Github</a>
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Live Demo</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="background-color: #e2eaf9; border-radius: 10%;">
+                        <div class="box" style="background-color: #ffffff;">>
+                            <img src="https://support.coursekeyeducation.com/hc/article_attachments/360001029453/mceclip4.png" alt="">
+                            <h3 class="project-title" style="color: #2e2424;">Capstone Project</h3>
+                            <p class="project-subtitle" style="color: #742424;">Excel, Python and Data Science</p>
+                            <p class="project-description" style="color: #794343;"> To improve and simplify the management of student grades for all four years, consider converting the ledger data into a more structured and accessible format, such as CSV or Excel. This will enable easier parsing, data extraction,
+                                and manipulation of the information.</p>
+                        </div>
+                        <div class="project-btn-container">
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Github</a>
+                            <a href="https://github.com/" class="btn btn-color-2 project-btn">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Get in Touch</div>
+                    <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be a part of your visions. Email me with any questions or inquiries. I'll happy to answer your questions and set up
+                        a meeting with you.</p>
+                    <div class="icons">
+
+                        <div class="row">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJjzyqdOTrPw0j8AgVRWOYIDiDQK-TvpED_nHk_IJBuQ&s" style="width: 4%; ">
+
+                            <i class="fa-solid fa-user-large"></i>
+
+                            <div class="info" style="padding-left: -30px;">
+                                <div class="head">Name</div>
+                                <div class="sub-title"><a href="#" style="text-decoration: none; color: #333;"> Gauri gupta</a></div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <img src="https://cdn-icons-png.freepik.com/256/447/447031.png" style="width: 4%;">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="info">
+                                <div class="head"> Address</div>
+                                <div class="sub-title"> Mira Road, Mumbai, India</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Oppjh-rqdE8N8vSZkntd2ZqI-FsKsfGperQceLrbag&s" style="width: 3.5%;">
+
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title"><a href="mailto:#" style="text-decoration: none; color: #333;"> gaurisgupta12@gmail.com</a></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <i class="bi bi-translate"></i>
+                            <div class="info">
+                                <div class="head">Language Known</div>
+                                <div class="sub-title">Hindi, English</div>
+                            </div>
+                        </div>
+
+
+                        <br>
+
+                        <!-- Social -->
+                        <div class="social-menu">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#" title="Get Educate with Us"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reach -->
+                <div class="column right">
+                    <div class="text">Message me</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="embedmap-canvas" style="margin-top: 50px;">
+                <iframe src="https://www.google.com/maps/embed/v1/place?q=Mumbai,+Maharashtra,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" style="border:0; height: 500px; width: 100%;"></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
